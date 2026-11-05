@@ -44,3 +44,8 @@ next-env.d.ts
 *.jpg
 *.jpeg
 *.png
+
+# submission documents & archives
+*.docx
+*.doc
+*.zip
