@@ -31,3 +31,4 @@ CREATE POLICY "Users can update their own books"
 CREATE POLICY "Users can delete their own books"
   ON books FOR DELETE
   USING (auth.uid() = user_id);
+
