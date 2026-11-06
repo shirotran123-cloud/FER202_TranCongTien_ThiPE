@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { AppProvider } from "@/context/AppContext";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "FER202 App",
-  description: "Next.js application with ShadCN UI & Supabase",
+  title: "ShelfLife",
+  description: "Keep track of books you want to read, are reading or have finished.",
 };
 
 export default function RootLayout({
@@ -18,9 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable)}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased flex flex-col", inter.variable)}>
         <AppProvider>
-          {children}
+          <Header />
+          <div className="flex-1">
+            {children}
+          </div>
         </AppProvider>
       </body>
     </html>
